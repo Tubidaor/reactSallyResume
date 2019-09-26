@@ -1,0 +1,29 @@
+img {
+  width: 40px;
+  height: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+li {
+  list-style: none;
+  margin-left: 4px;
+}
+li::after {
+  content: ':';
+}
+main {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}

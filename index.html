@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Sally Student Resume React
+    </title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <main id="renderResume">
+      <script
+        src="https://unpkg.com/react@16/umd/react.development.js">
+      </script>
+
+      <script
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+      </script>
+
+      <script
+        src="https://unpkg.com/babel-standalone@6/babel.min.js">
+      </script>
+
+      <script type="text/babel">
+        const contactInfo = {
+          name: 'Sally Student',
+          Email: <a href="mailto:SallyStudent@gmail.com">SallyStudent@gmail.com</a>,
+          Phone: '(818) 383-8855'
+        }
+
+        const jobs = {
+          job1: {
+            place: 'Tower Recors',
+            jobTitle: 'Accounting Manager: Jan 2018 - Present',
+            jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus non felis sit amet hendrerit. Praesent sagittis enim in lectus aliquet dictum. Nunc arcu nibh, volutpat eget nibh a, congue imperdiet metus. Proin pulvinar pharetra purus id sollicitudin. Fusce ac mauris ac nibh varius ullamcorper ac quis erat. In scelerisque aliquet pulvinar. Quisque tincidunt, enim vitae tristique mollis, lectus sem egestas odio, molestie blandit massa mi cursus libero. Morbi et mauris non ex auctor facilisis. Nunc ac ipsum mattis, vulputate nunc id, scelerisque enim.'
+          },
+          job2: {
+            place: 'Capcom',
+            jobTitle: 'Staff Accountant: Jan 2015 - Dec 2017',
+            jobDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus non felis sit amet hendrerit. Praesent sagittis enim in lectus aliquet dictum. Nunc arcu nibh, volutpat eget nibh a, congue imperdiet metus. Proin pulvinar pharetra purus id sollicitudin. Fusce ac mauris ac nibh varius ullamcorper ac quis erat. In scelerisque aliquet pulvinar. Quisque tincidunt, enim vitae tristique mollis, lectus sem egestas odio, molestie blandit massa mi cursus libero. Morbi et mauris non ex auctor facilisis. Nunc ac ipsum mattis, vulputate nunc id, scelerisque enim.'
+          }
+        }
+
+        const headings = {
+          Employment: 'Employment History',
+          Education: 'Education'
+        }
+
+        const image = `https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg`
+        function App(props) {
+          return (
+            <main>
+              {props.children}
+            </main>
+          );
+        }
+
+        ReactDOM.render(
+          <App>
+              <header>
+                <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg"  alt="Picture of Sally Student in yellow sweater"/>
+                <ul>
+                  <li>
+                    {contactInfo.name}
+                  </li>
+                  <li>
+                    {contactInfo.Email}
+                  </li>
+                  <li>
+                    {contactInfo.Phone}
+                  </li>
+                </ul>
+              </header>
+              <section>
+                <h1>{headings.Employment}</h1>
+                <h2>{jobs.job1.place}</h2>
+                <h3>{jobs.job1.jobTitle}</h3>
+                <p>{jobs.job1.jobDescription}</p>
+                <h2>{jobs.job2.place}</h2>
+                <h3>{jobs.job2.jobTitle}</h3>
+                <p>{jobs.job2.jobDescription}</p>
+              </section>
+              <section>
+                <h1>{headings.Education}</h1>
+                <h2>Calfornia State University Northridge</h2>
+              </section>
+          </App>,
+        document.querySelector('#renderResume')
+        );
+      </script>
+    </main>
+</body>
+</html>
